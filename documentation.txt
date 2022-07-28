@@ -1,0 +1,1 @@
+For creationg ingnor file we need creat a file witsh name .gitignore and inside write the name of ignored file and derectory where is locate plus of that write whole path of location 
