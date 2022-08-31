@@ -1,69 +1,112 @@
-
-
 const collection = document.getElementsByClassName("nav-scroller-item");
 for (let i = 0; i < collection.length; i++) {
-    collection[i].addEventListener("mouseover", function () {
-        let image = this.getElementsByTagName("img")[0];
-        let attributeValue = image.getAttribute("src");
-        let regex = /_grey\..+/i;
-        let newAttributeValue = attributeValue.replace(regex, "_colored.svg");
-        image.setAttribute("src", newAttributeValue);
-        //console.log(attributeValue + " .. " + newAttributeValue );
-    });
+  collection[i].addEventListener("mouseover", function () {
+    let image = this.getElementsByTagName("img")[0];
+    let attributeValue = image.getAttribute("src");
+    let regex = /_grey\..+/i;
+    let newAttributeValue = attributeValue.replace(regex, "_colored.svg");
+    image.setAttribute("src", newAttributeValue);
+    //console.log(attributeValue + " .. " + newAttributeValue );
+  });
 
-    collection[i].addEventListener("mouseout", function () {
-        let image = this.getElementsByTagName("img")[0];
-        let attributeValue = image.getAttribute("src");
-        let regex = /_colored\..+/i;
-        let newAttributeValue = attributeValue.replace(regex, "_grey.svg");
-        image.setAttribute("src", newAttributeValue);
-        //console.log(attributeValue + " .. " + newAttributeValue );
-    });
+  collection[i].addEventListener("mouseout", function () {
+    let image = this.getElementsByTagName("img")[0];
+    let attributeValue = image.getAttribute("src");
+    let regex = /_colored\..+/i;
+    let newAttributeValue = attributeValue.replace(regex, "_grey.svg");
+    image.setAttribute("src", newAttributeValue);
+    //console.log(attributeValue + " .. " + newAttributeValue );
+  });
 }
 
 // Popup window
 
-const popup = document.querySelector('.popup');
-const overlay = document.querySelector('.overlay');
-const btnOpenPopup = document.querySelector('.open-popup');
-const btnClosePopup = document.querySelector('.close-popup');
+const popup = document.querySelector(".popup");
+const overlay = document.querySelector(".overlay");
+const btnOpenPopup = document.querySelector(".open-popup");
+const btnClosePopup = document.querySelector(".close-popup");
+const popupText = document.querySelector('.popup-text')
+//Coming from server header and text into popup
+const coffeeInformation=(param)=>{
+const request = new XMLHttpRequest();
+request.open('GET','https://restcountries.com/v3.1/name/'+param);
+data = request.send();
+// console.log(this.responseText);
 
-// Open popup
-btnOpenPopup.addEventListener('click', function(){
-    popup.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-})
+request.addEventListener('load', function(){
+  // console.log(this.responseText);
+  const [data] = JSON.parse(this.responseText)
+  console.log(data);
+
+const html =`<div>
+        <h2>${data.capital}</h2>
+        <div>😍</div>
+        <p>${data.continents[0]}
+        </p>
+        </div>`
+;
+popupText.insertAdjacentHTML('beforeend', html)
+       }); 
+      }
+      coffeeInformation('italy');
+    // Open popup
+btnOpenPopup.addEventListener("click", function () {
+  popup.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+});
 // Close popup
-btnClosePopup.addEventListener('click', function(){
-    popup.classList.add('hidden');
-    overlay.classList.add('hidden');
-})
+btnClosePopup.addEventListener("click", function () {
+  popup.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
 
 // Overlay layer
-overlay.addEventListener('click', function(){
-    popup.classList.add('hidden');
-    overlay.classList.add('hidden');
-})
-// Buttons coffee-size
-const btnOkCoffeeSize = document.querySelector('.btn-ok-coffee-size');
-const btnBigCoffeeIcon = document.querySelector('.coffee-size-big');
-const btnMediumCoffeeIcon = document.querySelector('.coffee-size-medium');
-const btnSmallCoffeeIcon = document.querySelector('.coffee-size-small');
-// 
-btnBigCoffeeIcon.addEventListener('click', function(){
-    console.log('click coffee Big');
-    btnOkCoffeeSize.classList.remove('btn-ok-coffee-size');
-    return;
+overlay.addEventListener("click", function () {
+  popup.classList.add("hidden");
+  overlay.classList.add("hidden");
 });
-// 
-btnMediumCoffeeIcon.addEventListener('click', function(){
-    console.log('click coffee Medium');
-    btnOkCoffeeSize.classList.remove('btn-ok-coffee-size');
-    return;
-    });
-    // 
-btnSmallCoffeeIcon.addEventListener('click', function(){
-    btnOkCoffeeSize.classList.remove('btn-ok-coffee-size');
-    console.log('click coffee Small');
-    return;
-    });
+// Buttons coffee-size
+const btnOkCoffeeSize = document.querySelector(".btn-ok-coffee-size");
+const btnBigCoffeeIcon = document.querySelector(".coffee-size-big");
+const btnMediumCoffeeIcon = document.querySelector(".coffee-size-medium");
+const btnSmallCoffeeIcon = document.querySelector(".coffee-size-small");
+//
+btnBigCoffeeIcon.addEventListener("click", function () {
+  console.log("click coffee Big");
+  btnOkCoffeeSize.classList.remove("btn-ok-coffee-size");
+  return;
+});
+//
+btnMediumCoffeeIcon.addEventListener("click", function () {
+  console.log("click coffee Medium");
+  btnOkCoffeeSize.classList.remove("btn-ok-coffee-size");
+  return;
+});
+//
+btnSmallCoffeeIcon.addEventListener("click", function () {
+  btnOkCoffeeSize.classList.remove("btn-ok-coffee-size");
+  console.log("click coffee Small");
+  return;
+});
+
+// iCON BUTTONS COFFEE SIZE
+const collectionCoffeeBtn = document.getElementsByClassName("coffee-icon");
+for (let i = 0; i < collectionCoffeeBtn.length; i++) {
+  collectionCoffeeBtn[i].addEventListener("mouseover", function () {
+    let image = this.getElementsByTagName("img")[0];
+    let attributeValue = image.getAttribute("src");
+    let regex = /_notactive\..+/i;
+    let newAttributeValue = attributeValue.replace(regex, "_active.svg");
+    image.setAttribute("src", newAttributeValue);
+    //console.log(attributeValue + " .. " + newAttributeValue );
+  });
+
+  collectionCoffeeBtn[i].addEventListener("mouseout", function () {
+    let image = this.getElementsByTagName("img")[0];
+    let attributeValue = image.getAttribute("src");
+    let regex = /_active\..+/i;
+    let newAttributeValue = attributeValue.replace(regex, "_notactive.svg");
+    image.setAttribute("src", newAttributeValue);
+    //console.log(attributeValue + " .. " + newAttributeValue );
+  });
+}
