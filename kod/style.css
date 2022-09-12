@@ -38,6 +38,70 @@
     text-align: center;
     position: relative;
   }
+  /* Sign in buttons */
+  .btn-sign {
+    margin-top: 20px;
+    padding-bottom: 2px;
+    width: 100px;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 2px solid white;
+  }
+  .btn-sign:hover {
+    border-bottom: 2px solid #1cbaba;
+    color: #db2b75;
+    font-weight: 700;
+  }
+  .img-sign-in {
+    margin-top: 60px;
+  }
+  .signIn-text {
+    margin-top: 20px;
+  }
+  .signIn-text > h3 {
+    color: #232726;
+    font-size: 18px;
+  }
+
+  /* Form sign in */
+  input[type="text"] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #1cbaba;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    width: 200px;
+    background-color: #1cbaba;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #c1efe7;
+  }
+  /* Label decoration */
+  .inputSignIn {
+    text-align: left;
+    position: relative;
+    float: left;
+    left: 20px;
+    clear: right;
+    margin-top: 17px;
+    line-height: 3px;
+  }
+  .formSignInGapAfter {
+    margin-bottom: 10rem;
+  }
+  /* Searching gap main page */
   .search-bar {
     width: 100%;
     max-width: 60vw;
@@ -280,4 +344,11 @@ https://itchief.ru/html-and-css/horizontal-scrolling-menu
   .flex-footer P {
     font-size: 12px;
   }
+}
+div .footer-copyright > p {
+  background-color: #1cbaba;
+  color: #fff;
+  width: 100%;
+  border-top: 1px solid #c1efe7;
+  padding: 10px;
 }
