@@ -109,9 +109,9 @@
     display: flex;
     align-items: center;
     border-radius: 60px;
-    padding: 2% 4%;
+    padding: 1% 4%;
     position: absolute;
-    top: 15vw;
+    top: 14vw;
     left: 40%;
     transform: translate(-20vw);
   }
@@ -120,7 +120,7 @@
     border: 0;
     background: transparent;
     outline: none;
-    padding: 2% 3%;
+    padding: 0% 3%;
     font-size: 14px;
     text-transform: capitalize;
   }
@@ -171,7 +171,6 @@ https://itchief.ru/html-and-css/horizontal-scrolling-menu
   .nav-scroller::-webkit-scrollbar {
     display: none;
   }
-
   .nav-scroller-items {
     display: flex;
     flex-wrap: nowrap;
@@ -203,7 +202,7 @@ https://itchief.ru/html-and-css/horizontal-scrolling-menu
 
   /*Body with shop cards*/
   .box {
-    margin-bottom: 26vw;
+    margin-bottom: 38vw;
   }
   .box-container {
     margin: 15px 20px;
@@ -228,6 +227,15 @@ https://itchief.ru/html-and-css/horizontal-scrolling-menu
     border-radius: 6px;
     border: 1px solid white;
   }
+  .flex-item-left1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex: 50%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid white;
+  }
   .item-img3 {
     background-image: url(img/pict/coffee_shop_2.jpg);
   }
@@ -235,8 +243,7 @@ https://itchief.ru/html-and-css/horizontal-scrolling-menu
     background-image: url(img/pict/coffee_shop_1.jpg);
   }
   .item-img1 {
-    background-image: url(img/pict/coffee_shop_3.jpg);
-    background-position: center;
+    background-image: url(img/pict/coffee_shop_2.jpg);
   }
   .flex-item-right {
     flex: 50%;
@@ -351,4 +358,83 @@ div .footer-copyright > p {
   width: 100%;
   border-top: 1px solid #c1efe7;
   padding: 10px;
+}
+/* CAFE */
+
+.cafe-name{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 5.5rem;
+  background: linear-gradient( to left bottom, hsla(180, 12%, 95%, 0.623), hsla(0, 0%, 100%, 0.808)); 
+  /* background-color: rgba(255, 255, 255, 0.664); */
+  top:50%;
+}
+.cafe-name h1{
+  font-size: 20px;
+  position: absolute;
+  top: 35%;
+  left: 34%;
+  color: #1d2221;
+  transform: translate(-0.9rem, -0.1ex);
+  text-transform: uppercase;
+}
+
+
+.box{
+  margin-bottom:42vw;
+}
+.box-container{
+  margin: 12px 9px;
+  border:8px solid #c1efe7;
+  border-right: 1px; 
+  font-size: 3.7vw;
+  text-align: center;
+  background-color: #c1efe7;
+  border-radius: 1px;
+}
+.flex-container{
+  display: flex;
+  flex-wrap:nowrap;
+}
+
+.flex-item-left{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  flex:20%;
+  padding: 10px; 
+  border-radius: 6px;
+  border: 1px solid white;
+  height: 4.5rem;
+}
+
+.flex-item-right{
+  flex:60%;
+}
+.flex-item-btn{
+  flex:20%;
+  padding: 9px;
+  padding-top: 18px;
+}
+.flex-item-right h2{
+  font-size: 3.8vw;
+  text-transform: uppercase;
+  color:#181e1d;
+}
+
+.flex-item-right p {
+  text-transform: lowercase;
+  color: #444f4d;
+  font-weight: 500;
+}
+.stars-container{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.flex-stars{
+  padding: 3px;
+}
+.flex-stars img{
+  width: 28vw;
 }

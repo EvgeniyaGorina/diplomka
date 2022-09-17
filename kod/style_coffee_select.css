@@ -43,13 +43,16 @@
     text-align: justify;
 }
 /* Buttons */
+.select-container{
+    margin-bottom: 10rem;
+}
 .box-icons-coffee{
     display: flex;
-    margin: 2px 85px;
+    margin: 20px 85px;
 }
 .notice-coffee-icon{
-padding-top: 1vh;
-color: #1cbaba;
+    padding-top: 1vh;
+    color: #1cbaba;
 }
 .medium-notice{
     margin-bottom: -0.9vh;
@@ -63,7 +66,7 @@ color: #1cbaba;
     border: transparent;
 }
 .ok{
-    margin-top:20px;
+    margin-bottom:10rem;
     padding: 7px;
     width: 7rem;
     display: flex;

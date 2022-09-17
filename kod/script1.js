@@ -110,3 +110,30 @@ for (let i = 0; i < collectionCoffeeBtn.length; i++) {
     //console.log(attributeValue + " .. " + newAttributeValue );
   });
 }
+// Inserting elements with grocery
+const collectionOfGrocery = Math.floor(Math.random()*10)+1;
+const groceryBox = document.querySelector('.box-container');
+const groceryBoxDOM = 'box-'+ collectionOfGrocery;
+console.log(collectionOfGrocery);
+const textGroceryBox =` <div class="box-container box1">
+<div class="flex-container">
+  <div class="flex-item-left item-img1"></div>
+  <div class="flex-item-right">
+    <h3>strawberry</h3>
+    <p>Frosted Strawberry Donut Frozen Treat</p>
+  </div>
+  <div class="btn-container">
+    <div class="flex-item-btn btn-add">
+      <a class="btn-add btn" href="#"
+        ><img src="img/icons/add_btn.svg" alt="button add" />
+      </a>
+    </div>
+  </div>
+</div>
+</div>`
+console.log(textGroceryBox);
+for (let i = 0; i < collectionOfGrocery.length; i++) {
+  while(i!==0){
+    collectionOfGrocery=[textGroceryBox];
+  }
+}
